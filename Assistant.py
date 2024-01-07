@@ -9,7 +9,7 @@ import openai
 import streamlit as st
 import time
 
-assistant_id = "asst_f9iRttT3CV5QttEyVYj6YdsQ"
+assistant_id = st.secrets["assistant_id"]
 
 client = openai
 
@@ -20,7 +20,7 @@ if "thread_id" not in st.session_state:
 
 st.set_page_config(page_title="Chatbot", page_icon=":speech_balloon:")
 
-openai.api_key = "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"
+openai.api_key = st.secrets["openai_secret_key"]
 
 if st.sidebar.button("Start Chat"):
     st.session_state.start_chat = True
